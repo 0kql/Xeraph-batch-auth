@@ -1,0 +1,125 @@
+@echo off
+mode con cols=65 lines=32
+setlocal enabledelayedexpansion
+color 0a
+title Login Program
+//Make sure to cd your program I directory or else this wont work
+md C:\ProgramData\31-38104-4-14708472342114058
+cd C:\ProgramData\31-38104-4-14708472342114058
+:start1
+cls
+echo Input a number and press enter...
+echo.
+echo 1) Login
+echo 2) Create New Account
+set /p loginx1=">> "
+if not %loginx1% leq 2 goto start1
+if %loginx1% equ 1 goto login
+echo What do you want your username to be?
+set /p username1=">>> "
+set v1f=0
+
+:findspaces
+set x=!v1f!
+set Letter%v1f%=!username1:~%x%,1!
+if "!Letter%v1f%!" equ " " (
+echo.
+echo.
+echo Sorry, no spaces allowed in your username...
+pause >nul
+goto start1
+)
+if NOT "!Letter%v1f%!" equ "" (
+set /a v1f=%v1f%+1
+goto findspaces
+)
+echo What do you want your password to be?
+set /p password1=">>> "
+goto save
+
+:login
+cls
+set /p name1=Username:
+if not exist %name1%.bat (
+echo Invalid Username...
+pause >nul
+goto start1
+)
+set /p pass1=Password:
+call %name1%.bat
+if not %password1% equ %pass1% (
+echo Invalid Password
+pause >nul
+goto start1
+)
+goto menu
+
+:save
+(
+//Change File Directory If you want this to be the same
+echo set username1=%username1%
+echo set password1=%password1%
+)>C:\ProgramData\31-38104-4-14708472342114058\%username1%.bat
+goto start1
+
+:menu
+cls
+echo Logged in!
+timeout /t 2 /NOBREAK >nul
+mode con cols=65 lines=32
+setlocal enabledelayedexpansion
+color 0a
+title %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%
+@echo off
+cls
+taskkill /IM explorer.exe /f 
+cls
+echo Preventing Crack
+netsh interface set interface name="Local Area Connection" admin=ENABLE
+netsh interface set interface name="Ethernet" admin=ENABLE
+netsh interface set interface name="Ethernet adapter Bluetooth Network Connection 2" admin=ENABLE
+netsh interface set interface name="Wi-Fi" admin=ENABLE
+netsh interface set interface name="Wireless LAN adapter Local Area Connection" admin=ENABLE
+taskkill >nul /IM >nullunarengine-x86_64-SSE4-AVX2.exe >nul 
+cls 
+taskkill >nul /IM >nul lunarengine-x86_64.exe >nul 
+cls
+taskkill >nul /IM >nul  LunarEngine.exe >nul  
+cls
+taskkill >nul /IM >nul  FolderChangesView.exe >nul
+cls
+taskkill >nul /IM >nul KsDumper.exe >nul 
+cls
+taskkill >nul /IM >nul Debug.exe >nul 
+cls
+taskkill >nul /IM >nul HTTPDebuggerUI.exe >nul 
+cls
+taskkill >nul /IM >nul HTTPDebuggerSvc.exe >nul 
+cls
+taskkill >nul /IM >nul HTTPDebugger.exe >nul 
+cls
+taskkill >nul /IM >nul  MegaDumper.exe >nul 
+cls
+taskkill >nul /IM >nul CheatEngine.exe >nul 
+cls
+taskkill >nul /IM >nul ExtremeDumper.exe >nul
+cls
+taskkill >nul /IM >nul ExtremeDumper-x86.exe >nul 
+cls 
+taskkill >nul /IM >nul cheatengine-i386$.exe >nul  
+cls
+taskkill >nul /IM >nul cheatengine-x86_64.exe >nul  
+cls
+taskkill >nul /IM >nul KsDumperClient8.exe >nul  
+cls
+taskkill >nul /IM >nul cheatengine-x86_64-SSE4-AVX2  >nul
+cls
+taskkill >nul /IM >nul CheatEngine7.2F.exe >nul  
+cls
+timeout /t 10 /NOBREAK >nul
+powershell.exe [console]::beep(500,600)
+start explorer.exe
+cls
+//Input what ever you want here
+
+
